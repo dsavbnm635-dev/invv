@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     }
 
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbw83xSSP5IdR3TEUBOak8JFiYjX-kJA_66V6NaBRsZSfVgNMGopeSDi61QTn7OMf84PUg/exec",
+      "https://script.google.com/macros/s/AKfycby5V8LAJmsTJaJ-AAZIOSyoDIWPQPy7WZCUsBoePSsuOllrVdugERXID9UTAPw-u8qK6Q/exec",
       {
         method: "POST",
         headers: {
