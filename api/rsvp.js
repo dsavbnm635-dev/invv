@@ -13,11 +13,7 @@ module.exports = async (req, res) => {
     const id = String(b.id || "");
     const lang = b.lang === "en" ? "en" : "fa";
 
-    if (
-      !name ||
-      !(count >= 1 && count <= 3) ||
-      !UUID.test(id)
-    ) {
+    if (!name || !(count >= 1 && count <= 3) || !UUID.test(id)) {
       return res.status(400).json({ error: "invalid" });
     }
 
@@ -46,9 +42,7 @@ module.exports = async (req, res) => {
       });
     }
 
-    return res.status(200).json({
-      ok: true
-    });
+    return res.status(200).json({ ok: true });
 
   } catch (error) {
     console.error(error);
