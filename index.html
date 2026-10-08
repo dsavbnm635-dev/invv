@@ -151,7 +151,7 @@ dt:"Saturday, October 17, 2026",tm:"7:30 PM",vn:"Raffles Hotel – Dubai",map:"V
 cl:"Your presence and prayers for her precious soul would be deeply appreciated by our family.",
 name:"Full name",count:"Number of guests ",go:"I WILL ATTEND",need:"Please enter your name.",
 thx:"Thank you. Your attendance has been recorded.",edit:"Edit",fail:"Online RSVP is unavailable right now. You can send your reply by message instead.",wa:"Send message",tg:"فا",dg:["1","2","3"]}};
-const SHEET_URL="https://script.google.com/macros/s/AKfycbwb6bTUSr9ZP8ghymw7XLWhyIT-kYdlxSjzgWgom8wN4Exz3tj8yyFDCGaNFdpotRAp/exec";
+const SHEET_URL="https://script.google.com/macros/s/AKfycbw83xSSP5IdR3TEUBOak8JFiYjX-kJA_66V6NaBRsZSfVgNMGopeSDi61QTn7OMf84PUg/exec";
 let lang="fa",count=1,mine=null;
 function setLang(l){lang=l;const t=L[l];document.documentElement.lang=l;document.documentElement.dir=l=="fa"?"rtl":"ltr";document.body.classList.toggle("en",l=="en");
  for(const k of["q","by","inm","nm","msg","dt","tm","vn","map","cl"])$(k).innerHTML=t[k];
