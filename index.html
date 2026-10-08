@@ -166,7 +166,7 @@ $("tog").onclick=()=>setLang(lang=="fa"?"en":"fa");
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderRsvp(){const t=L[lang],r=$("rs");
  if(mine){r.innerHTML=`<div class="ok">${t.thx}<br><b>${esc(mine.name)}</b> · ${mine.count}<br><button class="lnk" id="ed">${t.edit}</button></div>`;$("ed").onclick=()=>{const m=mine;mine=null;renderRsvp();$("nmIn").value=m.name;count=m.count;paint()};return}
- r.innerHTML=`<form id="f" autocomplete="off"><input type="text" id="nmIn" maxlength="60" placeholder="${t.name}" aria-label="${t.name}"><p class="cl">${t.count}</p><div class="cnt">${[1,2,3].map(n=>`<button type="button" data-n="${n}">${t.dg[n-1]}</button>`).join("")}</div><p class="note" id="nt"></p><button class="btn solid" type="submit" id="go">${t.go}</button></form>`;
+ r.innerHTML=`<form id="f" autocomplete="off"><input type="text" id="nmIn" maxlength="60" placeholder="${t.name}" aria-label="${t.name}"><p class="cl">${t.count}</p><div class="cnt">${[1,2].map(n=>`<button type="button" data-n="${n}">${t.dg[n-1]}</button>`).join("")}</div><p class="note" id="nt"></p><button class="btn solid" type="submit" id="go">${t.go}</button> <p class="rsvp-deadline">${t.rsvpDeadline}</p> </form>`;
  r.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>{count=+b.dataset.n;paint()});paint();
  $("f").onsubmit=submit}
 function paint(){document.querySelectorAll("[data-n]").forEach(b=>b.classList.toggle("sel",+b.dataset.n==count))}
