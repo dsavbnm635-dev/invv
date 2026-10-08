@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<title>In Loving Memory · Iran Tavakoli</title>
+<title>In Loving Memory · Iran Tavakoli Bagheri </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Vazirmatn:wght@300;400;500;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
@@ -136,12 +136,12 @@ td,th{padding:10px 6px;border-bottom:1px solid #e3e3e3;text-align:left}
 <script>
 const $=id=>document.getElementById(id);
 const L={fa:{
-q:"«مرگ را پیام‌آور شادی برای تو قرار دادم؛<br>پس چرا اندوهگینی؟<br>نور را آفریدم تا درخشش خود را بر تو بتاباند؛<br>پس چرا خود را از آن می‌پوشانی؟»",
-by:"— حضرت بهاءالله",inm:"در یاد و خاطره‌ی مادر عزیزمان",nm:"ایران توکلی",
+q:"«جعلتُ لك الموتَ بشارة؛<br>فكيف تحزنُ منه؟<br>وجعلتُ النورَ لك ضياءً؛<br>فكيف تحتجبُ عنه؟؟»",
+by:"— حضرت بهاءالله",inm:"در یاد و خاطره‌ی مادر عزیزمان",nm:"ایران توکلي باقری",
 msg:"با عشقی عمیق و یاد و خاطره‌ای ماندگار،<br>از شما دعوت می‌کنیم در مراسم یادبود مادر عزیزمان در کنار ما حضور داشته باشید تا با هم زندگی و خاطره‌ی ایشان را گرامی بداریم.",
 dt:"شنبه، ۱۷ اکتبر ۲۰۲۶",tm:"ساعت ۷:۳۰ شب",vn:"هتل رافلز – دبی",map:"مشاهده روی نقشه",
 cl:"حضور شما و دعا و نیایش برای روح عزیز و گرانقدر ایشان،<br>مایه‌ی قدردانی و دلگرمی عمیق خانواده‌ی ما خواهد بود.",
-name:"نام و نام خانوادگی",count:"تعداد افراد ",go:"شرکت می‌کنم",need:"لطفاً نام خود را وارد کنید.",
+name:"نام و نام خانوادگی",count:"تعداد افراد ",go:"شرکت می‌کنم", rsvpDeadline:"لطفاً تا ۱۱ اکتبر حضور خود را اطلاع دهید.",need:"لطفاً نام خود را وارد کنید.",
 thx:"سپاس از شما؛ حضورتان ثبت شد.",edit:"ویرایش",fail:"ثبت آنلاین در دسترس نیست. می‌توانید حضور خود را از طریق پیام اطلاع دهید.",wa:"ارسال پیام",tg:"EN",dg:["۱","۲","۳"]},
 en:{
 q:"I have made death a messenger of joy to thee. Wherefore dost thou grieve? I made the light to shed on thee its splendor. Why dost thou veil thyself therefrom?",
@@ -149,7 +149,8 @@ by:"Baháʼuʼlláh",inm:"In Loving Memory of Our Beloved Mother",nm:"Iran Tavak
 msg:"With profound love and remembrance, we invite you to join us for a Memorial Service in honor of our beloved mother, as we remember her life.",
 dt:"Saturday, October 17, 2026",tm:"7:30 PM",vn:"Raffles Hotel – Dubai",map:"View on Map",
 cl:"Your presence and prayers for her precious soul would be deeply appreciated by our family.",
-name:"Full name",count:"Number of guests",go:"I WILL ATTEND",need:"Please enter your name.",
+name:"Full name",count:"Number of guests",go:"I WILL ATTEND", rsvpDeadline:"KINDLY RSVP BY 11 OCTOBER",
+need:"Please enter your name.",
 thx:"Thank you. Your attendance has been recorded.",edit:"Edit",fail:"Online RSVP is unavailable right now. You can send your reply by message instead.",wa:"Send message",tg:"فا",dg:["1","2","3"]}};
 const SHEET_URL="https://script.google.com/macros/s/AKfycby5V8LAJmsTJaJ-AAZIOSyoDIWPQPy7WZCUsBoePSsuOllrVdugERXID9UTAPw-u8qK6Q/exec";
 let lang="fa",count=1,mine=null;
@@ -172,7 +173,7 @@ function paint(){document.querySelectorAll("[data-n]").forEach(b=>b.classList.to
 function rid(){try{let i=localStorage.getItem("rid");if(!i){i=crypto.randomUUID();localStorage.setItem("rid",i)}return i}catch(e){return crypto.randomUUID()}}
 async function submit(e){e.preventDefault();const t=L[lang],name=$("nmIn").value.trim();
  if(!name){$("nt").textContent=t.need;return}
- const data={id:rid(),name,count:Math.min(3,Math.max(1,count)),lang};
+ const data={id:rid(),name,count:Math.min(2,Math.max(1,count)),lang};
  $("go").disabled=true;
  try{if(SHEET_URL.indexOf("https://")!==0)throw 0;await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
   mine=data;try{localStorage.setItem("rsvp",JSON.stringify(data))}catch(x){}renderRsvp()}
